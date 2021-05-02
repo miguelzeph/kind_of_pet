@@ -1,0 +1,15 @@
+# Virtual Env
+/env/
+# Cache
+*__pycache__/
+# Data Base
+/app/database.db
+# Fotos
+/static/photos/
+*.jpg
+*.png
+*.jpeg
+# Pasta Treino
+/01_project_model/train/
+# Model (muito pesado)
+01_project_model/pet_model.h5
