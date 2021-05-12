@@ -24,13 +24,13 @@ def pred(path):
     #return predictions
     
     saida = {
-        'birds':   predictions[0][0],
-        'cats':    predictions[0][1],
-        'dogs':    predictions[0][2],
-        'fishs':   predictions[0][3],
-        'hamsters':predictions[0][4],
-        'monkeys': predictions[0][5],
-        'reptiles':predictions[0][6],
+        'birds':   round(predictions[0][0],3),
+        'cats':    round(predictions[0][1],3),
+        'dogs':    round(predictions[0][2],3),
+        'fishs':   round(predictions[0][3],3),
+        'hamsters':round(predictions[0][4],3),
+        'monkeys': round(predictions[0][5],3),
+        'reptiles':round(predictions[0][6],3),
     }
     return saida
 
