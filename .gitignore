@@ -11,4 +11,4 @@
 # Pasta Treino
 /01_project_model/train/
 # Model (muito pesado) - Para mandar para o Github tive que mandar separadamente manualmente
-*.h5
+/01_project_model/*.h5

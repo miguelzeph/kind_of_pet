@@ -47,9 +47,9 @@ def download_images():
     browser.get(searchurl)
 
 
-    for y in range( 0 , 5 ):
+    for y in range( 0 , 8 ):
         browser.execute_script("window.scrollTo(0, window.scrollY + 2000)")
-        time.sleep(0.5)
+        time.sleep(1)
 
     soup = BeautifulSoup(browser.page_source) # Pulo do gato
     results = soup.findAll('img', {'class': 'rg_i Q4LuWd'}, limit=n_images)
