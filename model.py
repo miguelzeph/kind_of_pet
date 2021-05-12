@@ -1,13 +1,17 @@
 import tensorflow as tf
+import numpy as np
+import matplotlib.pyplot as plt
 
-# LOAD
 model = tf.keras.models.load_model('./model_EfficientNetB0.h5')
 
-def predicoes(path):
+def pred(path):
     # Abrir IMG
-    sample_image = tf.keras.preprocessing.image.load_img(f'./upload/{path}',
-                                                    target_size=(224,224))
+    sample_image = tf.keras.preprocessing.image.load_img( f'./static/upload/{path}',
+    target_size=(224,224)
+    )
+
     plt.imshow(sample_image)
+    
     # Img to Array
     sample_image = tf.keras.preprocessing.image.img_to_array(sample_image)
     # Colocar no formado (1,224,224,3)
@@ -29,10 +33,6 @@ def predicoes(path):
         'reptiles':predictions[0][6],
     }
     return saida
-
-# predict
-#predicoes( 'teste.jpg' )
-
 
 
 
