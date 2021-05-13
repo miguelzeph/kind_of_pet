@@ -4,16 +4,18 @@ from werkzeug.utils import secure_filename
 import os
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = './' # Diretório que será salvo
+app.config['UPLOAD_FOLDER'] = './static/upload' # Diretório que será salvo
 
 @app.route( '/', methods=["GET", "POST"] )
 def index( ):
+    
+    image = 'nothing'
 
-    return render_template( 'index.html' )
+    return render_template( 'index.html', image = image )
 
 @app.route('/upload', methods=['POST'])
 def upload():
-    pic = request.files['pic']
+    pic = request.files['file']
     
     if not pic:
         return 'No pic uploaded!', 400
@@ -26,15 +28,17 @@ def upload():
 
     pic.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(pic.filename)))
 
-    #return 'Img Uploaded!', 200
     return redirect( url_for('predict',filename = filename) )
 
 @app.route('/predict/<filename>', methods = ['GET'] )
 def predict( filename ):
     results = pred( str(filename) )
     results = {key: round(value * 100, 2) for key, value in results.items()}
-    print(results)
-    return render_template( 'predict.html', results = results )
+    #print(results)
+
+    image = f'/static/upload/{filename}'
+
+    return render_template( 'predict.html', results = results, image = image )
 
 
 if __name__ == '__main__':

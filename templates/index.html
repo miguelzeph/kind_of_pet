@@ -1,17 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PET</title>
-</head>
-<body>
-    
-    <form action="{{ url_for('upload') }}" enctype="multipart/form-data" method="POST"> 
-        <input type="file" name="pic" />
-        <input type="submit" value="Upload a file"/>
-    </form>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %} index page {% endblock %}
+{% block index %}
+<div class="p-5 bg-light rounded-3 meucss">
+    <div class="container">
+        <p class="display-4">Do you want to discovery what kinda pet do you have? </p>
+        <p class="lead">Select a picture</p>
+
+        <form action="{{ url_for('upload') }}" enctype="multipart/form-data" method="POST">
+            <input type="file" name="file" class="btn btn-primary  btn-block" />
+            <input type="submit" value="Upload a file" class="btn btn-secondary btn-block" />
+
+            
+                {% if image != 'nothing'%}
+                    <img src = '{{image}}' style = 'height:150px; width:180px;'>
+                    <!-- Teste
+                    <img src = '/static/upload/download_1.jpeg' style = 'height:150px; width:180px;'>
+                    -->
+                {% endif %}
+            
+        </form>
+        
+    </div>
+</div>
+
+{% block predict %}
+<!-- PREDICT.HTML-->
+{% endblock %}
+
+{% endblock %}
+
+

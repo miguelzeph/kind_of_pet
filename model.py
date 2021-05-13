@@ -6,7 +6,7 @@ model = tf.keras.models.load_model('./model_EfficientNetB0.h5')
 
 def pred(path):
     # Abrir IMG
-    sample_image = tf.keras.preprocessing.image.load_img( f'./{path}',
+    sample_image = tf.keras.preprocessing.image.load_img( f'./static/upload/{path}',
     target_size=(224,224)
     )
 

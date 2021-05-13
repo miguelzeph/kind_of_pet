@@ -1,19 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predict</title>
-</head>
-<body>
+{% extends 'index.html' %}
+{% block title %} results {% endblock %}
+{% block predict %}
 
-    <h3 style='color:green'>Probabilidade de ser:</h3>
-    {% for result in results %}
+    <div  style = 'background-color:rgb(212, 238, 253)'  class="p-5 rounded-3 meucss">
+        <div class="container">
+            
+            <p class = "display-4">Probabilidade de ser:</p>
 
-        <h4> {{ result }} ==> {{ results[result] }}% </h4>
-    
-    {% endfor %}
-    
-</body>
-</html>
+            <div class = 'row text-center'>
+                {% for result in results %}
+                    <div class = 'col card mb-4 shadow-sm'>
+
+                    <p class = 'lead'> 
+                        <b>{{ result }}</b>
+                    <p>
+                        {{ results[result] }}% 
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
