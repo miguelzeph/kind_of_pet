@@ -5,9 +5,9 @@
 # Data Base
 /app/database.db
 # Fotos
-*.jpg
-*.png
-*.jpeg
+#*.jpg
+#*.png
+#*.jpeg
 # Pasta Treino
 #/01_project_model/train/
 # Model (muito pesado) - Para mandar para o Github tive que mandar separadamente manualmente
