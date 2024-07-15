@@ -1,0 +1,12 @@
+-Vá no seu navegador, click em "SOBRE"/ "ABOUT"
+-veja sua versão, ex: 126.0.6478.126
+
+
+VERSIONS ABOVE 115
+- Use o link da tabela de acordo com sua versão -> https://googlechromelabs.github.io/chrome-for-testing/#stable
+(Atenção: instale a versao do chromeDRIVER... nao vai instalar o chrome)
+
+
+VERSIONS BELOW 115
+- https://www.selenium.dev/documentation/en/webdriver/driver_requirements/
+

@@ -32,7 +32,7 @@ def main():
     
 def download_images():
     
-    browser = webdriver.Chrome('./driver_Chromium90/chromedriver') 
+    browser = webdriver.Chrome('./driver_Chromium/chromedriver') 
     
     # Os inputs
     data = input('What are you looking for? ')
@@ -46,13 +46,17 @@ def download_images():
     
     browser.get(searchurl)
 
-
     for y in range( 0 , 8 ):
         browser.execute_script("window.scrollTo(0, window.scrollY + 2000)")
         time.sleep(1)
 
-    soup = BeautifulSoup(browser.page_source) # Pulo do gato
-    results = soup.findAll('img', {'class': 'rg_i Q4LuWd'}, limit=n_images)
+    # Pulo do gato
+    soup = BeautifulSoup(browser.page_source, 'html.parser')
+
+    
+    # Dica: O google sempre muda a classe da imagem, entao voce tem sempre que checar
+    # por exemplo, antes era "rg_i Q4LuWd"
+    results = soup.findAll('img', {'class': 'YQ4gaf'}, limit=n_images)
 
 
     imagelinks= []

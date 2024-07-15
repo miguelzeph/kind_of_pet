@@ -1,4 +1,0 @@
--Vá no seu navegador, click em "SOBRE"
--veja sua versão
-- https://www.selenium.dev/documentation/en/webdriver/driver_requirements/
-
